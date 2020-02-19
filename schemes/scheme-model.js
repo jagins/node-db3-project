@@ -45,11 +45,22 @@ function remove(id)
     return db('schemes').where({id}).del();
 }
 
+function addStep(step, scheme_id)
+{
+    const addStep = {
+        step_number: step.step_number,
+        instructions: step.instructions,
+        scheme_id
+    };
+    return db('steps').insert(addStep, 'id')
+}
+
 module.exports = {
     find,
     findById,
     findSteps,
     add,
     update,
-    remove
+    remove,
+    addStep
 }
