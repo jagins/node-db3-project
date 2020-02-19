@@ -2,7 +2,7 @@ const db = require('../data/db-config');
 
 function find()
 {
-
+    return db('schemes');
 }
 
 function findById(id)
